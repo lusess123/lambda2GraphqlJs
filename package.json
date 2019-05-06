@@ -1,0 +1,25 @@
+{
+  "name": "linq2graphqljs",
+  "version": "1.0.0",
+  "description": "js版本的Linq to Graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node --project ./tsconfig.json ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusess123/linq2GraphqlJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusess123/linq2GraphqlJs/issues"
+  },
+  "homepage": "https://github.com/lusess123/linq2GraphqlJs#readme",
+  "dependencies": {
+    "recast": "^0.17.6",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  }
+}
