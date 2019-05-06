@@ -50,6 +50,11 @@ db.Users
   
   
   
+  # 那能否把 js 函数语句 变回 graphql字符串呢？，答案是 可以
+  
+  
+  
+  
   ## 通过 js 的Function.toString()  获取 Native Code 分析表达式源码，转成真正的 graphql 语句
   
   ```
@@ -61,7 +66,7 @@ db.Users
                                                          
   ```
   
-  ## 代码转换
+  ## AST代码转换
   
   ```
   "() => {  return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } })}"
