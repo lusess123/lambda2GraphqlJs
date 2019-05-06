@@ -53,23 +53,23 @@ db.Users
   ## 通过 js 的Function.ToString()  获取 Native Code 分析表达式源码，转成真正的 graphql 语句
   
   ```
-  const linqExpress1 = () => {  return   db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } })  } 
+  const linqExpress1 = () => { return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } 
   
-  linqExpress1.toString()   // "() => {  return   db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } })  } "
+  linqExpress1.toString()// "() => {  return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } "
                                                          
   ```
   
   ## 代码转换
   
   ```
-  "() => {  return   db.Users.find(u => u.Id === 4) }"
+  "() => {  return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } })}"
   ```
   
   换成
   
    ```
    {
-  user(id: 4) {
+  user(Id: 4) {
     id
   }
 }
