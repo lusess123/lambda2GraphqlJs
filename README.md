@@ -50,7 +50,7 @@ db.Users
   
   
   
-  ## 通过 js 的Function.ToString()  获取 Native Code 分析表达式源码，转成真正的 graphql 语句
+  ## 通过 js 的Function.toString()  获取 Native Code 分析表达式源码，转成真正的 graphql 语句
   
   ```
   const linqExpress1 = () => {return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } 
