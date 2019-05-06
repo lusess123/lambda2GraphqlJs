@@ -6,7 +6,7 @@ js版本的Linq to Graphql
 ## 灵感来源于 C# 的 Linq to SQL
 ```
 {
-  user(id: 4) {
+  user(Id: 4) {
     id
     name
     profilePic(size: 100)
@@ -53,9 +53,11 @@ db.Users
   ## 通过 js 的Function.ToString()  获取 Native Code 分析表达式源码，转成真正的 graphql 语句
   
   ```
-  const linqExpress1 = () => { return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } 
+  const linqExpress1 = () => {return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } 
   
-  linqExpress1.toString()// "() => {  return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } "
+  linqExpress1.toString()
+  
+  // "() => {  return db.Users.filter(u => u.Id === 4).map(a => { return { id:a.id } }) } "
                                                          
   ```
   
