@@ -50,7 +50,7 @@ db.Users
   
   
   
-  # 那能否把 js 函数语句 变回 graphql字符串呢？，答案是 可以
+  ## 那能否把 js 函数语句 变回 graphql字符串呢？
   
   
   
