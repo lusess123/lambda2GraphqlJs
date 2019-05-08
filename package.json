@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lusess123/linq2GraphqlJs#readme",
   "dependencies": {
+    "react-json-view": "^1.19.1",
     "recast": "^0.17.6"
   },
   "devDependencies": {
