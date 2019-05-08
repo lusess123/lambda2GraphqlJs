@@ -1,19 +1,55 @@
 import recast from 'recast'
-const db: any = {}
-const linqExpress1 = (a: number, b: number) => a + b + 1
+import { rootGrpahqlCodeMaker } from './../src/creator'
+import { IDBQuery } from './../src/graphql-type'
+import './../test/creator.test'
+
+const linqExpress1 = (db: any) => db.Users.filter((u: any) => u.Id === 4).map(({name}) => ({name}))
 const code = linqExpress1.toString()
 const ast = recast.parse(code)
 // const fun  = ast.program.body[0]
 // tslint:disable-next-line: no-console
-console.log(code)
-// tslint:disable-next-line:no-console
-console.log(ast)
+// console.log(code)
+// // tslint:disable-next-line:no-console
+// console.log(ast)
+let DBParam = ''
+const query: IDBQuery = { rootTable : { name: '', fields: []}}
+recast.visit(ast, {
+    // visitArrowFunctionExpression(a) {
+    //  if (a.name === 'expression') {
+    //     DBParam = a.value.params[0].name
+    //     console.log(a)
+    //  }
+    //  this.traverse(a)
+    // },
+
+    visitIdentifier(a) {
+        this.traverse(a)
+    },
+
+    visitExpression(a) {
+         if (a.name === 'expression') {
+          DBParam = a.value.params[0].name
+         }
+         if (a.name === 'callee') {
+            if (a!.value!.object!.object && a!.value!.object!.object!.name === DBParam)
+            query.rootTable.name = a.value.object.property.name
+         }
+         console.log(a)
+         this.traverse(a)
+    },
+})
+
+if (query.rootTable.fields.length === 0) {
+    query.rootTable.fields = [{name: 'id'}, {name: 'name'}]
+}
+
+console.log(rootGrpahqlCodeMaker(query))
 
 export enum ExpressionType {
 
 }
 // alert(JSON.stringify(ast))
-console.log(JSON.parse(JSON.stringify(ast)))
+// console.log(JSON.parse(JSON.stringify(ast)))
 // tslint:disable-next-line:no-console
 // console.log(recast.print(fun.expression.body.body[0].argument.arguments[0].body.body[0]).code)
 
@@ -52,3 +88,4 @@ export interface IQueryable<T> extends Iterable<T> {
 const expression2 = new Expression((a: number, b: number) => a + b)
 const fun2 = expression2.Compile()
 // alert(fun2(1, 2))
+// ---------------------------
