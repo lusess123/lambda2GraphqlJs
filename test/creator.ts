@@ -1,5 +1,5 @@
-import { rootGrpahqlCodeMaker } from './../src/creator'
-import { IDBQuery } from './../src/graphql-type'
+import { rootGrpahqlCodeMaker } from '../src/creator'
+import { IDBQuery } from '../src/graphql-type'
 
 const Query: IDBQuery = {
     rootTable: {

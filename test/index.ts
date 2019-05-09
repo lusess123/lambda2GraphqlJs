@@ -1,5 +1,7 @@
+import { createJestPreset} from 'ts-jest'
+
 import { extendFunction, gql, ILinqDb, Lambda } from './../src/index'
-import { Db} from './db.test'
+import { Db} from './db'
 
 const code = gql((a) =>  a.Users.map(({ Id, Mobile, Name}) => ({ Mobile, Name, Id})))
 // tslint:disable-next-line:no-console
