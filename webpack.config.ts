@@ -8,7 +8,7 @@ const publicPath = path.join(__dirname, '/public')
 export default merge({
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: './src/index.tsx',
+    app: './test/index.ts',
   },
   output: {
     path: publicPath,
@@ -25,7 +25,7 @@ export default merge({
     new HtmlWebpackPlugin({
       chunks: ['app'],
       filename: 'index.html',
-      template: './src/views/index.html',
+      template: './test/views/index.html',
       hash: true,
     }),
   ],

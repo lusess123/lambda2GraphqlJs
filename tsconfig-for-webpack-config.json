@@ -2,16 +2,5 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "allowJs": true,
-    "downlevelIteration": true,
-    "noImplicitAny":false,
-    "jsx": "react",
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strictNullChecks": true
   }
 }

@@ -1,6 +1,6 @@
 
 import { rootGrpahqlCodeMaker } from '../src/creator'
-import { gql } from './../src/index'
+import { gql } from '../src/index'
 import { Db} from './db'
 
 test('gql function ', () => {

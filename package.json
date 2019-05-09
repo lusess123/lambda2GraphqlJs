@@ -1,10 +1,15 @@
 {
   "name": "lambda2graphqljs",
   "version": "0.0.1-beta",
-  "description": "js版本的Linq to Graphql",
-  "main": "index.js",
+  "description": "js版本的lambda to Graphql",
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "jest":"jest",
+    "prepublish": "npm run tsc",
+    "jest": "jest",
+    "tsc": "rm -rf lib && tsc  ./src/*.ts  -d --allowSyntheticDefaultImports true --lib es6,dom --experimentalDecorators true -t es6 --moduleResolution node --jsx react --outDir lib",
     "start": "ts-node --project ./tsconfig.json ./src/index.ts",
     "test": "ts-node --project ./tsconfig-for-webpack-config.json ./test/index.ts",
     "watch": "rm -rf public && TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" webpack-dev-server --config webpack.config.ts --mode development",
@@ -12,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lusess123/linq2GraphqlJs.git"
+    "url": "git+https://github.com/lusess123/lambda2graphqljs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lusess123/linq2GraphqlJs/issues"
+    "url": "https://github.com/lusess123/lambda2graphqljs/issues"
   },
-  "homepage": "https://github.com/lusess123/linq2GraphqlJs#readme",
+  "homepage": "https://github.com/lusess123/lambda2graphqljs#readme",
   "dependencies": {
     "react-json-view": "^1.19.1",
     "recast": "^0.17.6"
