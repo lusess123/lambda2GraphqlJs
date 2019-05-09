@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/lusess123/lambda2graphqljs#readme",
   "dependencies": {
-    "react-json-view": "^1.19.1",
     "recast": "^0.17.6"
   },
   "devDependencies": {
+    "react-json-view": "^1.19.1",
     "@types/html-webpack-plugin": "^3.2.0",
     "@types/jest": "^24.0.12",
     "@types/lodash": "^4.14.120",
