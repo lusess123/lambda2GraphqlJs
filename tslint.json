@@ -24,7 +24,7 @@
     "no-eval": true,
     "no-internal-module": true,
     "no-trailing-whitespace": true,
-    "no-shadowed-variable": true,
+    "no-shadowed-variable": false,
     "no-this-assignment": false,
     "jsx-alignment": false,
     "no-switch-case-fall-through": true,

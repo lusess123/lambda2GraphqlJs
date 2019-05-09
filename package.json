@@ -1,11 +1,11 @@
 {
-  "name": "linq2graphqljs",
+  "name": "lambda2graphqljs",
   "version": "1.0.0",
   "description": "js版本的Linq to Graphql",
   "main": "index.js",
   "scripts": {
     "start": "ts-node --project ./tsconfig.json ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-node --project ./tsconfig-for-webpack-config.json ./test/index.ts",
     "watch": "rm -rf public && TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" webpack-dev-server --config webpack.config.ts --mode development",
     "build": "rm -rf public && TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" NODE_ENV=production webpack --mode production"
   },
