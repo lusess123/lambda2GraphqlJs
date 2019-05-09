@@ -29,6 +29,17 @@ export class Db {
 const code = gql((a) =>  a.Users.map(({ Id, Mobile, Name}) => ({ Mobile, Name, Id})))
 // tslint:disable-next-line:no-console
 console.log(code)
+/*
+ {
+     Users  {
+
+       Mobile,
+       Name,
+       Id
+
+     }
+   }
+*/
 
 // 封装成对象使用
 const lambda1 = new Lambda<Db>(
@@ -36,12 +47,33 @@ const lambda1 = new Lambda<Db>(
   )
 // tslint:disable-next-line:no-console
 console.log(lambda1.gql())
+/*
+ {
+     Users (Mobile = 1232323) {
+
+       Mobile
+
+     }
+   }
+*/
+
+
 
 // 扩展方法使用
 extendFunction()
 const lambda: ILinqDb<Db> = (a) =>  a.Users.map(({ Id, Mobile, Name}) => ({ Mobile, Name}))
 // tslint:disable-next-line:no-console
 console.log(lambda.gql())
+/*
+{
+     Users  {
+
+       Mobile,
+       Name
+
+     }
+   }
+*/
 
 
 ```
