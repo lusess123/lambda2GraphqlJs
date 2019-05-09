@@ -1,6 +1,6 @@
 {
   "name": "lambda2graphqljs",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "description": "js版本的lambda to Graphql",
   "main": "lib",
   "files": [
