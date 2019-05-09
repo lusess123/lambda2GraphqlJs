@@ -1,4 +1,4 @@
-# linq2Graphql
+# lambda2Graphql
 js版本的Linq to Graphql
 
 # 设计思路
